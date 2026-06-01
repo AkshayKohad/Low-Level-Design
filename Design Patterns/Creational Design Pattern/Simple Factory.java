@@ -2,7 +2,13 @@ The factory decides which object to create.
 
 So object creation is centralized in one place.
 
+Use Simple Factory when
+Few product types
+Product types rarely change
+Small/medium application
+Simplicity matters
 
+    
 
 interface Button{
     void render();
