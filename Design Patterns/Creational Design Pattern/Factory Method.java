@@ -85,3 +85,11 @@ Instead of:
 NotificationFactory.create(type)
 
 you create new factories.
+
+Use Factory Method when
+Building frameworks/libraries
+New product types are added frequently
+You want extension through inheritance
+You want to follow Open/Closed Principle
+
+    
