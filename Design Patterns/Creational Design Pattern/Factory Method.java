@@ -92,4 +92,63 @@ New product types are added frequently
 You want extension through inheritance
 You want to follow Open/Closed Principle
 
+
+interface Button{
+    void render();
+}
+
+class WindowsButton implements Button{
+    @Override
+    public void render(){
+        System.out.println("Windows Button rendering");
+    }
+    
+}
+
+class MacButton implements Button{
+    @Override 
+    public void render(){
+        System.out.println("Mac Buttons rendering");
+    }
+}
+
+abstract class Dialog{
+    public abstract Button createButton();
+    
+    public void show(){
+        Button button = createButton();
+        button.render();
+        System.out.println("Dialog displayed");
+    }
+}
+
+class WindowsDialog extends Dialog {
+    @Override
+    public Button createButton() {
+        return new WindowsButton();
+    }
+}
+
+// Concrete Creator 2
+class MacDialog extends Dialog {
+    @Override
+    public Button createButton() {
+        return new MacButton();
+    }
+}
+
+
+class Main {
+  public static void main(String[] args) {
+    Dialog dialog = new WindowsDialog();
+    dialog.show();
+    
+    System.out.println();
+    
+    dialog = new MacDialog();
+    dialog.show();
+  }
+}
+    
+
     
