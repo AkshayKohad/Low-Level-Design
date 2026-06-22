@@ -52,7 +52,6 @@ class ChocolateTopping extends IceCreamDecorator{
     }
 }
 
-// Concrete decorator: Nuts topping
 class NutsTopping extends IceCreamDecorator {
 
     public NutsTopping(Icecream icecream) {
@@ -70,8 +69,24 @@ class NutsTopping extends IceCreamDecorator {
     }
 }
 
+class SprinklesTopping extends IceCreamDecorator {
 
-class Main {
+    public SprinklesTopping(Icecream icecream) {
+        super(icecream);
+    }
+
+    @Override
+    public String getDescription() {
+        return icecream.getDescription() + ", Sprinkles";
+    }
+
+    @Override
+    public double getCost() {
+        return icecream.getCost() + 0.50;
+    }
+}
+
+public class DecoratorPatternDemo {
   public static void main(String[] args) {
     Icecream iceCream = new Vanilla();
     System.out.println(iceCream.getDescription());
